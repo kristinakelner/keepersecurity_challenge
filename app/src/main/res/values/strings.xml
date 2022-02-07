@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Keeper Security Coding Test</string>
+    <string name="desc_logo">Logo</string>
+    <string name="login">Login</string>
+    <string name="email">Email</string>
+    <string name="master_password">Master Password</string>
+    <string name="login_btn">Login</string>
+    <string name="no_account">Don\'t have an account?</string>
+    <string name="create">Create</string>
+    <string name="need_help">Need Help?</string>
+    <string name="sso_login">Use Enterprise SSO Login</string>
+    <string name="copyright">© 2020 Keeper Security, Inc.</string>
+    <string name="enter_email">Enter Email</string>
+    <string name="enter_master_password">Enter Master Password</string>
+    <string name="error_email">Please provide valid email.</string>
+    <string name="error_password">Password should be at least 6 characters long.</string>
+</resources>

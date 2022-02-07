@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:padding="20dp">
+
+    <ImageView
+        android:id="@+id/logoImg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/logo_keeper"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/titleTxt"
+        android:contentDescription="@string/desc_logo" />
+
+    <TextView
+        android:id="@+id/titleTxt"
+        style="@style/TitleText"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:text="@string/login"
+        app:layout_constraintBottom_toTopOf="@id/emailField"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/logoImg" />
+
+    <TextView
+        android:id="@+id/emailFieldTxt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="start"
+        android:text="@string/email"
+        app:layout_constraintBottom_toTopOf="@id/emailField"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/titleTxt" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/emailField"
+        style="@style/LoginField"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/emailFieldTxt"
+        app:layout_constraintBottom_toTopOf="@id/masterPasswordField"
+        app:hintEnabled="false">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/enter_email"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/masterPasswordFieldTxt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="start"
+        android:text="@string/master_password"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/emailField"
+        app:layout_constraintBottom_toTopOf="@id/masterPasswordField" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/masterPasswordField"
+        style="@style/LoginField"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:passwordToggleEnabled="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/masterPasswordFieldTxt"
+        app:layout_constraintBottom_toTopOf="@id/loginBtn"
+        app:hintEnabled="false"
+        >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/enter_master_password"
+            android:inputType="textPassword"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/loginBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/login_btn"
+        style="@style/MainButton"
+        android:onClick="onLoginClick"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/masterPasswordField"
+        app:layout_constraintBottom_toTopOf="@id/createAccountGroup"/>
+
+    <LinearLayout
+        android:id="@+id/createAccountGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/loginBtn"
+        app:layout_constraintBottom_toTopOf="@id/helpPromptTxt">
+
+        <TextView
+            android:id="@+id/noAccountTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/no_account" />
+
+        <TextView
+            android:id="@+id/createTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/LinkText"
+            android:text="@string/create" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/helpPromptTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="20dp"
+        android:text="@string/need_help"
+        style="@style/LinkText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/createAccountGroup"
+        app:layout_constraintBottom_toTopOf="@id/ssoLoginBtn"/>
+
+    <Button
+        android:id="@+id/ssoLoginBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/DefaultButton"
+        android:text="@string/sso_login"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/helpPromptTxt"
+        app:layout_constraintBottom_toTopOf="@id/copyrightTxt" />
+
+    <TextView
+        android:id="@+id/copyrightTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/CopyrightText"
+        android:text="@string/copyright"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ssoLoginBtn"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
